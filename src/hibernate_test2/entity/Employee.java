@@ -1,9 +1,9 @@
-package hibernate_test.entity;
+package hibernate_test2.entity;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "employees2")
+@Table(name = "employees")
 public class Employee {
 
     @Id
@@ -22,6 +22,10 @@ public class Employee {
 
     @Column(name = "salary")
     private int salary;
+
+    @OneToOne(cascade = CascadeType.ALL )
+    @JoinColumn(name = "details_id")
+    private Detail empDetail;
 
     public Employee() {
     }
