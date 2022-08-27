@@ -22,7 +22,6 @@ public class Child {
     @ManyToMany(
 //            cascade = CascadeType.ALL
             cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH,CascadeType.DETACH}
-
     )
     @JoinTable(
             name = "child_section"
